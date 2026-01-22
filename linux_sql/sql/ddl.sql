@@ -3,7 +3,9 @@
 -- Run using:
 -- psql -h localhost -U postgres -d host_agent_monitor -f sql/ddl.sql
 
-CREATE TABLE IF NOT EXISTS public.host_info
+\c host_agent_monitor
+
+  CREATE TABLE IF NOT EXISTS public.host_info
 (
   id               SERIAL PRIMARY KEY,
   hostname         VARCHAR NOT NULL UNIQUE,
