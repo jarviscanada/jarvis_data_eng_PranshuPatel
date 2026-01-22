@@ -1,7 +1,7 @@
 -- ddl.sql
--- Creates tables for host_agent database
+-- Creates tables for host_agent_monitor database
 -- Run using:
--- psql -h localhost -U postgres -d host_agent -f sql/ddl.sql
+-- psql -h localhost -U postgres -d host_agent_monitor -f sql/ddl.sql
 
 USE host_agent_monitor;
 CREATE TABLE IF NOT EXISTS public.host_info
