@@ -3,6 +3,7 @@
 -- Run using:
 -- psql -h localhost -U postgres -d host_agent -f sql/ddl.sql
 
+USE host_agent_monitor;
 CREATE TABLE IF NOT EXISTS public.host_info
 (
   id               SERIAL PRIMARY KEY,
