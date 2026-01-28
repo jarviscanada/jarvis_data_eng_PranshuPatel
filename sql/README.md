@@ -62,7 +62,7 @@ SELECT
 FROM cd.facilities;
 ```
 
-#### Question: We made a mistake when entering the data for the second tennis court
+#### Question 3: We made a mistake when entering the data for the second tennis court
 
 We made a mistake when entering the data for the second tennis court.
 The initial outlay was 10000 rather than 8000, so the data needs to be corrected.
@@ -73,7 +73,7 @@ SET initialoutlay = 10000
 WHERE name = 'Tennis Court 2';
 
 ```
-#### Question: Alter the price of the second tennis court
+#### Question 4: Alter the price of the second tennis court
 
 We want to alter the price of the second tennis court so that it costs
 10% more than the first one. This is done without using constant values
@@ -94,7 +94,7 @@ SET membercost = (
 WHERE name = 'Tennis Court 2';
 
 ```
-#### Question: Delete all bookings from the bookings table
+#### Question 5: Delete all bookings from the bookings table
 
 As part of a clearout of the database, all records from the
 `cd.bookings` table need to be removed.
@@ -103,7 +103,7 @@ As part of a clearout of the database, all records from the
 DELETE FROM cd.bookings;
 ```
 
-#### Question: Remove member 37 who has never made a booking
+#### Question 6: Remove member 37 who has never made a booking
 
 We want to remove member 37 from the database. Since this member has
 never made a booking, the deletion can be safely performed by ensuring
@@ -117,7 +117,7 @@ WHERE memid = 37
       FROM cd.bookings
   );
 ```
-#### Question: Facilities with member fee less than 1/50th of monthly maintenance
+#### Question 7: Facilities with member fee less than 1/50th of monthly maintenance
 
 How can you produce a list of facilities that charge a fee to members,
 and that fee is less than 1/50th of the monthly maintenance cost?
@@ -133,7 +133,7 @@ FROM cd.facilities
 WHERE membercost > 0
   AND membercost < (monthlymaintenance / 50.0);
 ```
-#### Question: List all facilities with the word 'Tennis' in their name
+#### Question 8: List all facilities with the word 'Tennis' in their name
 
 How can you produce a list of all facilities with the word 'Tennis'
 in their name?
@@ -144,7 +144,7 @@ FROM cd.facilities
 WHERE name LIKE '%Tennis%';
 
 ```
-#### Question: Retrieve details of facilities with ID 1 and 5
+#### Question 9: Retrieve details of facilities with ID 1 and 5
 
 How can you retrieve the details of facilities with ID 1 and 5?
 This is done without using the OR operator.
@@ -154,7 +154,7 @@ SELECT *
 FROM cd.facilities
 WHERE facid IN (1, 5);
 ```
-#### Question: List members who joined after the start of September 2012
+#### Question 10: List members who joined after the start of September 2012
 
 How can you produce a list of members who joined after the start of
 September 2012? Return the memid, surname, firstname, and joindate
@@ -169,7 +169,7 @@ FROM cd.members
 WHERE joindate >= '2012-09-01'
 ORDER BY joindate;
 ```
-#### Question: Produce a combined list of all surnames and facility names
+#### Question 11: Produce a combined list of all surnames and facility names
 
 You, for some reason, want a combined list of all surnames and all
 facility names. Yes, this is a contrived example :-).
@@ -184,7 +184,7 @@ UNION
 SELECT name
 FROM cd.facilities;
 ```
-#### Question: List booking start times for member David Farrell
+#### Question 12: List booking start times for member David Farrell
 
 How can you produce a list of the start times for bookings
 by members named 'David Farrell'?
@@ -199,7 +199,7 @@ WHERE m.firstname = 'David'
 ORDER BY b.starttime;
 
 ```
-#### Question: List tennis court booking start times for 2012-09-21
+#### Question 13: List tennis court booking start times for 2012-09-21
 
 How can you produce a list of the start times for bookings for tennis courts,
 for the date '2012-09-21'? Return a list of start time and facility name
@@ -217,7 +217,7 @@ WHERE f.name LIKE 'Tennis Court%'
 ORDER BY b.starttime;
 ```
 
-#### Question: List all members with their recommender (if any)
+#### Question 14: List all members with their recommender (if any)
 
 How can you output a list of all members, including the individual
 who recommended them (if any)? Ensure that results are ordered by
@@ -231,7 +231,7 @@ select mems.firstname as memfname, mems.surname as memsname, recs.firstname as r
 			on recs.memid = mems.recommendedby
 order by memsname, memfname;
 ```
-#### Question: List all members who have recommended another member
+#### Question 15: List all members who have recommended another member
 
 How can you output a list of all members who have recommended
 another member? Ensure that there are no duplicates in the list,
@@ -245,7 +245,7 @@ select distinct recs.firstname as firstname, recs.surname as surname
 			on recs.memid = mems.recommendedby
 order by surname, firstname;  
 ```
-#### Question: List all members and their recommender without using joins
+#### Question 16: List all members and their recommender without using joins
 
 How can you output a list of all members, including the individual who
 recommended them (if any), without using any joins? Ensure that there are
@@ -264,7 +264,7 @@ FROM cd.members m
 ORDER BY member;
 
 ```
-#### Question: Count the number of recommendations each member has made
+#### Question 17: Count the number of recommendations each member has made
 
 Produce a count of the number of recommendations each member has made.
 The results are ordered by member ID.
@@ -276,7 +276,7 @@ select recommendedby, count(*)
 	group by recommendedby
 order by recommendedby; 
 ```
-#### Question: List the total number of slots booked per facility
+#### Question 18: List the total number of slots booked per facility
 
 Produce a list of the total number of slots booked per facility.
 For now, just produce an output table consisting of facility id
@@ -290,7 +290,7 @@ GROUP BY facid
 ORDER BY facid;
 
 ```
-#### Question: List total slots booked per facility in September 2012
+#### Question 19: List total slots booked per facility in September 2012
 
 Produce a list of the total number of slots booked per facility
 in the month of September 2012. Produce an output table consisting
@@ -306,7 +306,7 @@ GROUP BY facid
 ORDER BY total_slots;
 
 ```
-#### Question: Total slots booked per facility per month in 2012
+#### Question 20: Total slots booked per facility per month in 2012
 
 Produce a list of the total number of slots booked per facility per month
 in the year of 2012. Produce an output table consisting of facility id
@@ -319,7 +319,7 @@ select facid, extract(month from starttime) as month, sum(slots) as "Total Slots
 	group by facid, month
 order by facid, month;  
 ```
-#### Question: Count members who have made at least one booking
+#### Question 21: Count members who have made at least one booking
 
 Find the total number of members (including guests)
 who have made at least one booking.
@@ -329,7 +329,7 @@ SELECT COUNT(DISTINCT memid) AS member_count
 FROM cd.bookings;
 
 ```
-#### Question: List each member's first booking after September 1st 2012
+#### Question 22: List each member's first booking after September 1st 2012
 
 Produce a list of each member name, id, and their first booking
 after September 1st 2012. Order by member ID.
@@ -344,7 +344,7 @@ select mems.surname, mems.firstname, mems.memid, min(bks.starttime) as starttime
 order by mems.memid; 
 
 ```
-#### Question: List member names with total member count on each row
+#### Question 23: List member names with total member count on each row
 
 Produce a list of member names, with each row containing the total member count.
 Order by join date, and include guest.
@@ -354,7 +354,7 @@ select count(*) over(), firstname, surname
 	from cd.members
 order by joindate 
 ```
-#### Question: Produce a numbered list of members ordered by join date
+#### Question 24: Produce a numbered list of members ordered by join date
 
 Produce a monotonically increasing numbered list of members
 (including guests), ordered by their date of joining.
@@ -365,7 +365,7 @@ select row_number() over(order by joindate), firstname, surname
 	from cd.members
 order by joindate
 ```
-#### Question: Facility with the highest number of slots booked
+#### Question 25: Facility with the highest number of slots booked
 
 Output the facility id that has the highest number of slots booked.
 Ensure that in the event of a tie, all tieing results get output.
@@ -378,7 +378,7 @@ select facid, total from (
 	) as ranked
 	where rank = 1
 ```
-#### Question: Format the names of members
+#### Question 26: Format the names of members
 
 Output the names of all members, formatted as 'Surname, Firstname'.
 
@@ -388,7 +388,7 @@ FROM cd.members
 ORDER BY surname, firstname;
 
 ```
-#### Question: Find telephone numbers with parentheses
+#### Question 27: Find telephone numbers with parentheses
 
 You've noticed that the club's member table has telephone numbers
 with very inconsistent formatting. You'd like to find all the
@@ -403,7 +403,7 @@ WHERE telephone LIKE '%(%'
 ORDER BY memid;
 ```
 
-#### Question: Count members by starting letter of surname
+#### Question 28: Count members by starting letter of surname
 
 You'd like to produce a count of how many members you have whose
 surname starts with each letter of the alphabet. Sort by the letter,
