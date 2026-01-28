@@ -146,13 +146,13 @@ FROM cd.members
 WHERE joindate >= '2012-09-01'
 ORDER BY joindate;
 
-#### Question: Produce a combined list of all surnames and facility names
+--Question: Produce a combined list of all surnames and facility names
 
-You, for some reason, want a combined list of all surnames and all
-facility names. Yes, this is a contrived example :-).
-Produce that list.
+--You, for some reason, want a combined list of all surnames and all
+--facility names. Yes, this is a contrived example :-).
+--Produce that list.
 
-```sql
+
 SELECT surname AS name
 FROM cd.members
 
