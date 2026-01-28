@@ -57,7 +57,7 @@ SELECT facid, name, initialoutlay
 FROM cd.facilities
 WHERE name = 'Tennis Court 2';
 
--- Question:
+-- Question 4:
 -- We want to alter the price of the second tennis court so that it costs
 -- 10% more than the first one. Try to do this without using constant values
 -- for the prices, so that we can reuse the statement if we want to.
@@ -80,7 +80,7 @@ FROM cd.facilities
 WHERE name IN ('Tennis Court 1', 'Tennis Court 2')
 ORDER BY name;
 
--- Question:
+-- Question 5:
 -- As part of a clearout of our database, we want to delete all bookings
 -- from the cd.bookings table. How can we accomplish this?
 
@@ -89,7 +89,7 @@ DELETE FROM cd.bookings;
 SELECT COUNT(*)
 FROM cd.bookings;
 
--- Question:
+-- Question 6:
 -- We want to remove member 37, who has never made a booking,
 -- from our database. How can we achieve that?
 
@@ -103,7 +103,7 @@ SELECT *
 FROM cd.members
 WHERE memid = 37;
 
--- Question:
+-- Question 7:
 -- How can you produce a list of facilities that charge a fee to members,
 -- and that fee is less than 1/50th of the monthly maintenance cost?
 -- Return the facid, facility name, member cost, and monthly maintenance
@@ -117,7 +117,7 @@ FROM cd.facilities
 WHERE membercost > 0
   AND membercost < (monthlymaintenance / 50.0);
 
--- Question:
+-- Question 8:
 -- How can you produce a list of all facilities with the word 'Tennis'
 -- in their name?
 
@@ -125,7 +125,7 @@ SELECT *
 FROM cd.facilities
 WHERE name LIKE '%Tennis%';
 
--- Question:
+-- Question 9:
 -- How can you retrieve the details of facilities with ID 1 and 5?
 -- Try to do it without using the OR operator.
 
@@ -133,7 +133,7 @@ SELECT *
 FROM cd.facilities
 WHERE facid IN (1, 5);
 
--- Question:
+-- Question 10:
 -- How can you produce a list of members who joined after the start of
 -- September 2012? Return the memid, surname, firstname, and joindate
 -- of the members in question.
@@ -146,7 +146,7 @@ FROM cd.members
 WHERE joindate >= '2012-09-01'
 ORDER BY joindate;
 
---Question: Produce a combined list of all surnames and facility names
+--Question 11: Produce a combined list of all surnames and facility names
 
 --You, for some reason, want a combined list of all surnames and all
 --facility names. Yes, this is a contrived example :-).
@@ -162,7 +162,7 @@ SELECT name
 FROM cd.facilities;
 
 
--- Question:
+-- Question 12:
 -- How can you produce a list of the start times for bookings
 -- by members named 'David Farrell'?
 
@@ -174,7 +174,7 @@ WHERE m.firstname = 'David'
   AND m.surname = 'Farrell'
 ORDER BY b.starttime;
 
--- Question:
+-- Question 13:
 -- How can you produce a list of the start times for bookings for tennis courts,
 -- for the date '2012-09-21'? Return a list of start time and facility name
 -- pairings, ordered by the time.
@@ -189,7 +189,7 @@ WHERE f.name LIKE 'Tennis Court%'
   AND b.starttime < '2012-09-22'
 ORDER BY b.starttime;
 
--- Question:
+-- Question 14:
 -- How can you output a list of all members, including the individual
 -- who recommended them (if any)? Ensure that results are ordered by
 -- (surname, firstname).
@@ -201,7 +201,7 @@ select mems.firstname as memfname, mems.surname as memsname, recs.firstname as r
 			on recs.memid = mems.recommendedby
 order by memsname, memfname;
 
--- Question:
+-- Question 15:
 -- How can you output a list of all members who have recommended
 -- another member? Ensure that there are no duplicates in the list,
 -- and that results are ordered by (surname, firstname).
@@ -214,7 +214,7 @@ select distinct recs.firstname as firstname, recs.surname as surname
 order by surname, firstname;  
 
 
--- Question:
+-- Question 16:
 -- How can you output a list of all members, including the individual who
 -- recommended them (if any), without using any joins? Ensure that there are
 -- no duplicates in the list, and that each firstname + surname pairing is
@@ -230,7 +230,7 @@ SELECT DISTINCT
 FROM cd.members m
 ORDER BY member;
 
--- Question:
+-- Question 17:
 -- Produce a count of the number of recommendations each member has made.
 -- Order by member ID.
 
@@ -240,7 +240,7 @@ select recommendedby, count(*)
 	group by recommendedby
 order by recommendedby; 
 
--- Question:
+-- Question 18:
 -- Produce a list of the total number of slots booked per facility.
 -- For now, just produce an output table consisting of facility id
 -- and slots, sorted by facility id.
@@ -251,7 +251,7 @@ FROM cd.bookings
 GROUP BY facid
 ORDER BY facid;
 
--- Question:
+-- Question 19:
 -- Produce a list of the total number of slots booked per facility
 -- in the month of September 2012. Produce an output table consisting
 -- of facility id and slots, sorted by the number of slots.
@@ -264,7 +264,7 @@ WHERE starttime >= '2012-09-01'
 GROUP BY facid
 ORDER BY total_slots;
 
--- Question:
+-- Question 20:
 -- Produce a list of the total number of slots booked per facility per month
 -- in the year of 2012. Produce an output table consisting of facility id
 -- and slots, sorted by the id and month.
@@ -275,7 +275,7 @@ select facid, extract(month from starttime) as month, sum(slots) as "Total Slots
 	group by facid, month
 order by facid, month;  
 
--- Question:
+-- Question 21:
 -- Find the total number of members (including guests)
 -- who have made at least one booking.
 
@@ -283,7 +283,7 @@ SELECT COUNT(DISTINCT memid) AS member_count
 FROM cd.bookings;
 
 
--- Question:
+-- Question 22:
 -- Produce a list of each member name, id, and their first booking
 -- after September 1st 2012. Order by member ID.
 
@@ -295,7 +295,7 @@ select mems.surname, mems.firstname, mems.memid, min(bks.starttime) as starttime
 	group by mems.surname, mems.firstname, mems.memid
 order by mems.memid; 
 
--- Question:
+-- Question 23:
 -- Produce a list of member names, with each row containing the total member count.
 -- Order by join date, and include guest.
 
@@ -303,7 +303,7 @@ select count(*) over(), firstname, surname
 	from cd.members
 order by joindate 
 
--- Question:
+-- Question 24:
 -- Produce a monotonically increasing numbered list of members
 -- (including guests), ordered by their date of joining.
 -- Remember that member IDs are not guaranteed to be sequential.
@@ -312,7 +312,7 @@ select row_number() over(order by joindate), firstname, surname
 	from cd.members
 order by joindate 
 
--- Question:
+-- Question 25:
 -- Output the facility id that has the highest number of slots booked.
 -- Ensure that in the event of a tie, all tieing results get output.
 
@@ -323,14 +323,14 @@ select facid, total from (
 	) as ranked
 	where rank = 1  
 	
--- Question:
+-- Question 26:
 -- Output the names of all members, formatted as 'Surname, Firstname'.
 
 SELECT surname || ', ' || firstname AS member_name
 FROM cd.members
 ORDER BY surname, firstname;
 
--- Question:
+-- Question 27:
 -- You've noticed that the club's member table has telephone numbers
 -- with very inconsistent formatting. You'd like to find all the
 -- telephone numbers that contain parentheses, returning the member ID
@@ -342,7 +342,7 @@ FROM cd.members
 WHERE telephone LIKE '%(%'
 ORDER BY memid;
 
--- Question:
+-- Question 28:
 -- You'd like to produce a count of how many members you have whose
 -- surname starts with each letter of the alphabet. Sort by the letter,
 -- and don't worry about printing out a letter if the count is 0.
