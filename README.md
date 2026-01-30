@@ -28,7 +28,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PranshuPat
 
 ## Professional Experiences
 
-**Data Engineer, Jarvis Consulting Group (2025-present)**: Developed and maintained data engineering solutions using Python, SQL, Linux, Docker, and Git while collaborating in Agile teams to build analytics pipelines, automate reporting workflows, and deliver scalable, client-facing data solutions.
+**Data Engineer, Jarvis Consulting Group (Jan 2026-present)**: Developed and maintained data engineering solutions using Python, SQL, Linux, Docker, and Git while collaborating in Agile teams to build analytics pipelines, automate reporting workflows, and deliver scalable, client-facing data solutions.
 
 **Data Engineer, Futuretech Bizsoft LLP (May 2023-July 2025)**: Processed and analyzed large-scale business and survey datasets using Python, SQL, and SAS, developed Power BI dashboards for KPI tracking, and automated reporting workflows to improve data quality, efficiency, and decision-making across client teams.
 
