@@ -36,7 +36,7 @@
     },
     {
       "description": "Designed and executed advanced SQL queries on PostgreSQL to analyze system and business datasets, utilizing joins, subqueries, window functions, indexing, and aggregations to optimize data retrieval, support analytics use cases, and generate meaningful insights from relational databases.",
-      "git_url": "/linux_sql",
+      "git_url": "/sql",
       "name": "RDBMS and Advanced SQL Analytics"
     }
   ],

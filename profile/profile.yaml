@@ -35,7 +35,7 @@ jarvis_projects:
     description: Developed a Linux cluster monitoring application using CentOS, Bash, Docker, PostgreSQL, and crontab to collect, store, and analyze system resource metrics, enabling automated data analytics, system health tracking, and performance reporting across multiple nodes.
 
   - name: "RDBMS and Advanced SQL Analytics"
-    git_url: "/linux_sql"
+    git_url: "/sql"
     description: Designed and executed advanced SQL queries on PostgreSQL to analyze system and business datasets, utilizing joins, subqueries, window functions, indexing, and aggregations to optimize data retrieval, support analytics use cases, and generate meaningful insights from relational databases.
 
 # List of personal or academic projects
