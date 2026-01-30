@@ -1,0 +1,99 @@
+# Preferred name (Characters only)
+name: "Pranshu Patel"
+
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel
+
+# Introduce yourself (80-120 words)
+summary: Pranshu Patel is a Data Engineer with hands-on experience designing, building, and maintaining data pipelines and analytics solutions across consulting, academic, and industry projects. He has worked extensively with Python, SQL, Linux, and BI tools to clean, transform, and analyze large-scale datasets while delivering actionable insights to stakeholders. Pranshu is passionate about automating data workflows, improving data quality, and enabling data-driven decision-making through reliable analytics and visualization. He is seeking a Data Engineer role where he can contribute to scalable data systems, collaborate with cross-functional teams, and continue growing in cloud-based data engineering environments.
+
+# Group your skills by level.
+skills:
+  proficient:
+    - Python
+    - SQL
+    - Linux/Bash
+    - Git
+    - Data Analysis
+  competent:
+    - Power BI
+    - Pandas
+    - PySpark
+    - RDBMS
+    - Agile/Scrum
+  familiar:
+    - Tableau
+    - SAS
+    - Docker
+    - Cloud Computing
+    - Excel Automation
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Linux Cluster Resource Monitoring App"
+    git_url: "/linux_sql"
+    description: Developed a Linux cluster monitoring application using CentOS, Bash, Docker, PostgreSQL, and crontab to collect, store, and analyze system resource metrics, enabling automated data analytics, system health tracking, and performance reporting across multiple nodes.
+
+  - name: "RDBMS and Advanced SQL Analytics"
+    git_url: "/sql"
+    description: Designed and executed advanced SQL queries on PostgreSQL to analyze system and business datasets, utilizing joins, subqueries, window functions, indexing, and aggregations to optimize data retrieval, support analytics use cases, and generate meaningful insights from relational databases.
+
+# List of personal or academic projects
+highlighted_projects:
+  - name: "E-Commerce Sales Data Pipeline"
+    git_url: "https://github.com/iampranshupatel/E-Commerce-Store-Analysis"
+    description: Engineered an end-to-end ETL pipeline using Python, SQL, and Pandas to process over 100k e-commerce transactions, performing data cleansing and transformation to support Power BI dashboards and improve analytics-driven business insights.
+
+  - name: "Retail Inventory Optimization System"
+    git_url:
+    description: Designed a SQL-driven inventory monitoring system analyzing over 200k product records to identify reorder points and stock discrepancies, automating KPI reporting with Python and Power BI to reduce stockouts and improve inventory planning efficiency.
+
+# List of professional experience
+professional_experience:
+  - title: "Data Engineer"
+    company: "Jarvis Consulting Group"
+    duration: "January 2026-present"
+    description: Developed and maintained data engineering solutions using Python, SQL, Linux, Docker, and Git while collaborating in Agile teams to build analytics pipelines, automate reporting workflows, and deliver scalable, client-facing data solutions.
+
+  - title: "Data Engineer"
+    company: "Futuretech Bizsoft LLP"
+    duration: "May 2023-July 2025"
+    description: Processed and analyzed large-scale business and survey datasets using Python, SQL, and SAS, developed Power BI dashboards for KPI tracking, and automated reporting workflows to improve data quality, efficiency, and decision-making across client teams.
+
+  - title: "Data Engineer Intern"
+    company: "Techomax Solutions"
+    duration: "February 2023-April 2023"
+    description: Validated and cleaned transactional datasets using Python, SQL, and SAS, performed exploratory data analysis, and built BI dashboards to enhance data reliability and analytical reporting for client-facing deliverables.
+
+  - title: "Data Engineer Intern"
+    company: "Webburner India"
+    duration: "June 2022-July 2022"
+    description: Collected, cleansed, and structured CRM and survey data using Python, SQL, and Excel while automating ETL workflows and developing dashboards to support marketing analytics and performance tracking.
+
+# List of education
+education:
+  - school_name: "Northeastern University, Toronto"
+    duration: "January 2024-June 2025"
+    degree: "Master of Professional Studies"
+    department: "Informatics (Cloud Computing)"
+    awards_achievements:
+
+  - school_name: "Gujarat Technological University, India"
+    duration: "July 2019-May 2023"
+    degree: "Bachelor of Engineering"
+    department: "Computer Science & Engineering"
+    awards_achievements:
+
+# Optional section
+others:
+  - title: "Certificates"
+    bullets:
+      - "Career Essentials in Data Analysis  Microsoft & LinkedIn"
+      - "Foundations & Career Skills in Data Analytics  LinkedIn"
+      - "Database Management Systems & Data Science with Python  Scaler"
+
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Continuous learning in data engineering and analytics"
+      - "Technical documentation and project reporting"
+

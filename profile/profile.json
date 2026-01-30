@@ -1,0 +1,111 @@
+{
+  "education": [
+    {
+      "awards_achievements": null,
+      "degree": "Master of Professional Studies",
+      "department": "Informatics (Cloud Computing)",
+      "duration": "January 2024-June 2025",
+      "school_name": "Northeastern University, Toronto"
+    },
+    {
+      "awards_achievements": null,
+      "degree": "Bachelor of Engineering",
+      "department": "Computer Science \u0026 Engineering",
+      "duration": "July 2019-May 2023",
+      "school_name": "Gujarat Technological University, India"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel",
+  "highlighted_projects": [
+    {
+      "description": "Engineered an end-to-end ETL pipeline using Python, SQL, and Pandas to process over 100k e-commerce transactions, performing data cleansing and transformation to support Power BI dashboards and improve analytics-driven business insights.",
+      "git_url": "https://github.com/iampranshupatel/E-Commerce-Store-Analysis",
+      "name": "E-Commerce Sales Data Pipeline"
+    },
+    {
+      "description": "Designed a SQL-driven inventory monitoring system analyzing over 200k product records to identify reorder points and stock discrepancies, automating KPI reporting with Python and Power BI to reduce stockouts and improve inventory planning efficiency.",
+      "git_url": null,
+      "name": "Retail Inventory Optimization System"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Developed a Linux cluster monitoring application using CentOS, Bash, Docker, PostgreSQL, and crontab to collect, store, and analyze system resource metrics, enabling automated data analytics, system health tracking, and performance reporting across multiple nodes.",
+      "git_url": "/linux_sql",
+      "name": "Linux Cluster Resource Monitoring App"
+    },
+    {
+      "description": "Designed and executed advanced SQL queries on PostgreSQL to analyze system and business datasets, utilizing joins, subqueries, window functions, indexing, and aggregations to optimize data retrieval, support analytics use cases, and generate meaningful insights from relational databases.",
+      "git_url": "/sql",
+      "name": "RDBMS and Advanced SQL Analytics"
+    }
+  ],
+  "name": "Pranshu Patel",
+  "others": [
+    {
+      "bullets": [
+        "Career Essentials in Data Analysis  Microsoft \u0026 LinkedIn",
+        "Foundations \u0026 Career Skills in Data Analytics  LinkedIn",
+        "Database Management Systems \u0026 Data Science with Python  Scaler"
+      ],
+      "title": "Certificates"
+    },
+    {
+      "bullets": [
+        "Continuous learning in data engineering and analytics",
+        "Technical documentation and project reporting"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis Consulting Group",
+      "description": "Developed and maintained data engineering solutions using Python, SQL, Linux, Docker, and Git while collaborating in Agile teams to build analytics pipelines, automate reporting workflows, and deliver scalable, client-facing data solutions.",
+      "duration": "January 2026-present",
+      "title": "Data Engineer"
+    },
+    {
+      "company": "Futuretech Bizsoft LLP",
+      "description": "Processed and analyzed large-scale business and survey datasets using Python, SQL, and SAS, developed Power BI dashboards for KPI tracking, and automated reporting workflows to improve data quality, efficiency, and decision-making across client teams.",
+      "duration": "May 2023-July 2025",
+      "title": "Data Engineer"
+    },
+    {
+      "company": "Techomax Solutions",
+      "description": "Validated and cleaned transactional datasets using Python, SQL, and SAS, performed exploratory data analysis, and built BI dashboards to enhance data reliability and analytical reporting for client-facing deliverables.",
+      "duration": "February 2023-April 2023",
+      "title": "Data Engineer Intern"
+    },
+    {
+      "company": "Webburner India",
+      "description": "Collected, cleansed, and structured CRM and survey data using Python, SQL, and Excel while automating ETL workflows and developing dashboards to support marketing analytics and performance tracking.",
+      "duration": "June 2022-July 2022",
+      "title": "Data Engineer Intern"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "Power BI",
+      "Pandas",
+      "PySpark",
+      "RDBMS",
+      "Agile/Scrum"
+    ],
+    "familiar": [
+      "Tableau",
+      "SAS",
+      "Docker",
+      "Cloud Computing",
+      "Excel Automation"
+    ],
+    "proficient": [
+      "Python",
+      "SQL",
+      "Linux/Bash",
+      "Git",
+      "Data Analysis"
+    ]
+  },
+  "summary": "Pranshu Patel is a Data Engineer with hands-on experience designing, building, and maintaining data pipelines and analytics solutions across consulting, academic, and industry projects. He has worked extensively with Python, SQL, Linux, and BI tools to clean, transform, and analyze large-scale datasets while delivering actionable insights to stakeholders. Pranshu is passionate about automating data workflows, improving data quality, and enabling data-driven decision-making through reliable analytics and visualization. He is seeking a Data Engineer role where he can contribute to scalable data systems, collaborate with cross-functional teams, and continue growing in cloud-based data engineering environments."
+}
