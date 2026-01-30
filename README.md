@@ -17,7 +17,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PranshuPat
 
 **Linux Cluster Resource Monitoring App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/linux_sql)]: Developed a Linux cluster monitoring application using CentOS, Bash, Docker, PostgreSQL, and crontab to collect, store, and analyze system resource metrics, enabling automated data analytics, system health tracking, and performance reporting across multiple nodes.
 
-**RDBMS and Advanced SQL Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/linux_sql)]: Designed and executed advanced SQL queries on PostgreSQL to analyze system and business datasets, utilizing joins, subqueries, window functions, indexing, and aggregations to optimize data retrieval, support analytics use cases, and generate meaningful insights from relational databases.
+**RDBMS and Advanced SQL Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/sql)]: Designed and executed advanced SQL queries on PostgreSQL to analyze system and business datasets, utilizing joins, subqueries, window functions, indexing, and aggregations to optimize data retrieval, support analytics use cases, and generate meaningful insights from relational databases.
 
 
 ## Highlighted Projects
