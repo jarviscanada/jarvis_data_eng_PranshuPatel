@@ -21,3 +21,12 @@ node_modules/
 # Logs
 *.log
 
+
+# local dev/cache (never commit)
+**/.config/
+**/.ipynb_checkpoints/
+**/.ipython/
+**/.jupyter/
+**/.local/
+**/.npm/
+
