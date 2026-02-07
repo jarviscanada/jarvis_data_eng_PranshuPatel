@@ -56,7 +56,7 @@ The project follows a **containerized data analytics architecture** using Docker
 
 The diagram below illustrates the full project architecture, including the LGS web app and data flow:
 
-![Project Architecture](./assets/architecture_diagram.png)
+![Project Architecture](./assets/Architecture.drawio.png)
 
 ---
 
@@ -65,7 +65,7 @@ The diagram below illustrates the full project architecture, including the LGS w
 ### Notebook
 All analytics, visualizations, and customer segmentation logic are implemented in the Jupyter notebook below:
 
-?? **[Retail Data Analytics Notebook](./retail_data_analytics_wrangling.ipynb)**
+?? **[Retail Data Analytics Notebook](./python_data_wrangling/retail_data_analytics_wrangling.ipynb)**
 
 ### How This Data Helps LGS Increase Revenue
 
