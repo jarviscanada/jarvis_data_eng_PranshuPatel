@@ -30,3 +30,7 @@ node_modules/
 **/.local/
 **/.npm/
 
+
+# Ignore Jupyter / Python cache
+python_data_analytics/.cache/
+
