@@ -19,7 +19,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PranshuPat
 
 **RDBMS and Advanced SQL Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/sql)]: Designed and executed advanced SQL queries on PostgreSQL to analyze system and business datasets, utilizing joins, subqueries, window functions, indexing, and aggregations to optimize data retrieval, support analytics use cases, and generate meaningful insights from relational databases.
 
-**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/python_data_anlytics)]: Processed and analyzed a large-scale dataset of over 1M records by importing relational SQL data into Jupyter Notebook using SQLAlchemy and psycopg2, performing data transformation and analysis with NumPy and Pandas, and generating insight-driven visualizations with Matplotlib, Seaborn, and Squarify to support data-driven decision-making.
+**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/python_data_analytics)]: Processed and analyzed a large-scale dataset of over 1M records by importing relational SQL data into Jupyter Notebook using SQLAlchemy and psycopg2, performing data transformation and analysis with NumPy and Pandas, and generating insight-driven visualizations with Matplotlib, Seaborn, and Squarify to support data-driven decision-making.
 
 
 ## Highlighted Projects
