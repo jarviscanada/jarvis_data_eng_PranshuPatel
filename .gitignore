@@ -1,3 +1,38 @@
+# OS / editor
+.DS_Store
+*.swp
+*.swo
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.ipython/
+.jupyter/
+
+# Node / npm
+node_modules/
+.npm/
+
+# Local user caches (should never be in repo)
+.local/
+.config/
+
+# Logs
+*.log
+
+
+# local dev/cache (never commit)
+**/.config/
+**/.ipynb_checkpoints/
+**/.ipython/
+**/.jupyter/
+**/.local/
+**/.npm/
+
+
+# Ignore Jupyter / Python cache
+python_data_analytics/.cache/
 # Jupyter / Python local environment
 **/.ipynb_checkpoints/
 **/.ipython/
