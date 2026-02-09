@@ -1,0 +1,12 @@
+# Jupyter / Python local environment
+**/.ipynb_checkpoints/
+**/.ipython/
+**/.jupyter/
+**/.cache/
+**/.config/
+**/.local/
+**/.npm/
+
+# Python virtual / analytics artifacts
+python_data_analytics/python_data_wrangling/
+
