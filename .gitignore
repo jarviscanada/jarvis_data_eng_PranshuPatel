@@ -45,3 +45,23 @@ python_data_analytics/.cache/
 # Python virtual / analytics artifacts
 python_data_analytics/python_data_wrangling/
 
+
+# Maven
+**/target/
+*.class
+
+# IntelliJ
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+
+# Java
+*.class
+*.jar
+
+
+# Output folders
+**/out/
+
