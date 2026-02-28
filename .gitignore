@@ -61,7 +61,15 @@ python_data_analytics/python_data_wrangling/
 *.class
 *.jar
 
+# Logs
+**/log/
+
+*.log
+
 
 # Output folders
 **/out/
+
+# Maven shade plugin
+dependency-reduced-pom.xml
 
