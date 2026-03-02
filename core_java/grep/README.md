@@ -10,20 +10,20 @@ The project was built using **Java 8**, **Maven**, **SLF4J + Log4j**, **Lambda &
 
 # Quick Start
 
-## 1?? Build the project
+## 1 Build the project
 
 ```bash
 cd core_java/grep
 mvn clean package
 ```
 
-## 2?? Run using fat jar
+## 2 Run using fat jar
 
 ```bash
 java -jar target/grep-1.0-SNAPSHOT.jar ".*Romeo.*Juliet.*" ./data ./out/grep.txt
 ```
 
-## 3?? Run using Docker
+## 3 Run using Docker
 
 ```bash
 docker pull itspranshupatel/grep
