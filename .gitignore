@@ -45,3 +45,31 @@ python_data_analytics/.cache/
 # Python virtual / analytics artifacts
 python_data_analytics/python_data_wrangling/
 
+
+# Maven
+**/target/
+*.class
+
+# IntelliJ
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+
+# Java
+*.class
+*.jar
+
+# Logs
+**/log/
+
+*.log
+
+
+# Output folders
+**/out/
+
+# Maven shade plugin
+dependency-reduced-pom.xml
+
