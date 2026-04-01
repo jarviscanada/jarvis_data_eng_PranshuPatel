@@ -2,17 +2,17 @@
 
 ## Introduction
 
-This project focuses on implementing data analytics workflows using PySpark in two different big data notebook environments: Databricks and Zeppelin. The overall goal was to strengthen practical experience with distributed data processing, structured APIs, and notebook-based analytics using PySpark.
+This project focuses on implementing data analytics workflows using PySpark in two different notebook environments: Databricks and Zeppelin. The main goal was to strengthen practical experience with distributed data processing, structured DataFrame APIs, and notebook-based analytics using PySpark.
 
 In the Databricks portion of the project, I worked on retail transaction analytics using a PostgreSQL retail dataset. I loaded the data into Databricks with JDBC and used PySpark DataFrames to clean, transform, and analyze the data. The work included monthly sales analysis, placed versus canceled orders, active users, new versus existing users, and RFM customer segmentation.
 
-In the Zeppelin portion of the project, I evaluated PySpark on Zeppelin notebook using the World Development Indicators dataset stored as a Hive table in a Hadoop environment. This part of the project focused on understanding how PySpark works in a Zeppelin + Hadoop + Hive ecosystem and how analytics workflows differ from Databricks. Together, both implementations helped me understand PySpark across multiple distributed platforms.
+In the Zeppelin portion of the project, I evaluated PySpark on Zeppelin notebook using the World Development Indicators dataset stored as a Hive table. This part of the project focused on understanding how PySpark works in Zeppelin and how analytical workflows can be developed using Spark SQL and PySpark DataFrames in a notebook environment.
 
-Technologies used in this project include PySpark, Databricks, Zeppelin, PostgreSQL, JDBC, GCP Dataproc, Hadoop, Hive Metastore, and structured DataFrame APIs.
+Technologies used in this project include PySpark, Databricks, Zeppelin, PostgreSQL, JDBC, GCP Dataproc, Hive Metastore, and structured DataFrame APIs.
 
 ---
 
-## Databricks Hadoop Implementation
+## Databricks Implementation
 
 The Databricks implementation uses a retail transaction dataset stored in PostgreSQL. The dataset includes invoice number, stock code, item description, quantity, invoice date, unit price, customer ID, and country. I connected Databricks to PostgreSQL using JDBC and loaded the retail table into a PySpark DataFrame.
 
@@ -32,7 +32,7 @@ The notebook implementation can be found here:
 
 - [Retail Data Analytics with PySpark Notebook](./spark/notebook/Retail_Data_Analytics_with_PySpark.ipynb)
 
-In this architecture, PostgreSQL acts as the source system, Databricks provides the notebook and compute environment, and PySpark DataFrames are used for transformation and aggregation. Databricks allows scalable distributed analysis while also making it easy to inspect intermediate and final DataFrames interactively.
+In this architecture, PostgreSQL acts as the source system, Databricks provides the notebook and compute environment, and PySpark DataFrames are used for transformation and aggregation. Databricks makes it easy to process the data at scale and interactively inspect intermediate and final results.
 
 Main Databricks architecture components:
 
@@ -40,8 +40,7 @@ Main Databricks architecture components:
 - JDBC for data ingestion
 - Databricks notebook as the analytics workspace
 - PySpark DataFrames for distributed transformation and analysis
-- Databricks runtime and storage layer
-- metadata support for notebook-based analytics
+- Databricks runtime environment
 
 ### Databricks Architecture Diagram
 
@@ -51,25 +50,23 @@ Main Databricks architecture components:
 
 ## Zeppelin Implementation
 
-The Zeppelin implementation focuses on evaluating PySpark on Zeppelin notebook using the World Development Indicators dataset. The business goal of this part was not retail analytics, but rather to explore how PySpark can be used in Zeppelin for structured analytical tasks in a Hadoop environment.
+The Zeppelin implementation focuses on evaluating PySpark on Zeppelin notebook using the World Development Indicators dataset. The purpose of this part was not retail analytics, but to understand how PySpark can be used effectively in Zeppelin for structured analytical tasks.
 
-As a Data Engineer, I wanted to evaluate PySpark on Zeppelin notebook and understand how it works with Hive tables and Hadoop-based storage. For this work, I reused the `wdi_csv_parquet` Hive table that was created in the Hadoop project. The dataset contains development indicator data such as year, country name, country code, indicator name, indicator code, and indicator value.
+As a Data Engineer, I wanted to evaluate PySpark on Zeppelin notebook and understand how it works with Hive tables and notebook-based analytics. For this work, I reused the `wdi_csv_parquet` Hive table created from the WDI dataset. The dataset contains fields such as year, country name, country code, indicator name, indicator code, and indicator value.
 
-Using Zeppelin and PySpark, I performed DataFrame-based analysis on the WDI dataset and reinforced my understanding of Spark transformations, filtering, aggregation, joins, and notebook-driven data exploration. This implementation helped compare the Zeppelin workflow with the Databricks workflow and provided hands-on experience with a more traditional Hadoop ecosystem.
+Using Zeppelin and PySpark, I performed DataFrame-based analysis on the WDI dataset and strengthened my understanding of Spark transformations, filtering, aggregation, joins, and notebook-driven data exploration. This implementation also helped me compare the Zeppelin workflow with the Databricks workflow and understand the strengths of both notebook platforms.
 
 The notebook implementation can be found here:
 
 - [Spark Dataframe - WDI Data Analytics Notebook](./spark/notebook/Spark_Dataframe_WDI_Data_Analytics.ipynb)
 
-In this architecture, the parquet-based WDI dataset is stored in HDFS and exposed through a Hive external table. Zeppelin serves as the interactive notebook interface, while the Dataproc cluster provides the Hadoop and Spark execution environment. PySpark is used to query and analyze the Hive table through Spark DataFrame APIs.
+In this architecture, the WDI dataset is stored as a Hive table and queried through Zeppelin using PySpark. Zeppelin acts as the interactive notebook interface, while PySpark provides the structured API used for analysis. This setup demonstrates how Spark-based analytics can be performed in Zeppelin using notebook-driven workflows.
 
-Main Zeppelin and Hadoop architecture components:
+Main Zeppelin architecture components:
 
 - GCP Dataproc cluster
-- Hadoop ecosystem for distributed storage and processing
-- HDFS for parquet dataset storage
-- Hive Metastore and Hive table for schema management
 - Zeppelin notebook for interactive analytics
+- Hive table for structured data access
 - PySpark DataFrames for transformation and querying
 
 ### Zeppelin Architecture Diagram
@@ -82,14 +79,14 @@ Main Zeppelin and Hadoop architecture components:
 
 There are several ways this project can be improved in the future:
 
-1. Add business dashboards on top of the Databricks retail analytics output so that monthly sales, user activity, and RFM insights can be monitored more easily.
+1. Add interactive dashboards on top of the Databricks retail analytics output so business users can monitor monthly sales, order behavior, and customer segmentation more easily.
 
-2. Automate the retail data ingestion workflow from PostgreSQL into a scheduled analytics pipeline instead of using a manual notebook-driven process.
+2. Automate the retail data ingestion workflow from PostgreSQL into Databricks instead of using a manual notebook-driven load process.
 
-3. Improve the RFM segmentation logic by working with business stakeholders to define more accurate segment rules and action plans for each customer group.
+3. Improve the RFM segmentation logic by working with business stakeholders to define more meaningful segment rules and actions for each customer group.
 
-4. Extend the Zeppelin implementation beyond exploratory WDI analysis by creating more advanced Spark transformations, joins, and reusable data pipelines.
+4. Extend the Zeppelin implementation with more advanced WDI analytics, including deeper country-level comparisons and trend analysis across multiple indicators.
 
-5. Integrate cloud object storage and partitioned tables to make both Databricks and Zeppelin workflows more production-ready and scalable.
+5. Compare Databricks and Zeppelin more formally by measuring differences in usability, notebook experience, and performance for similar PySpark workloads.
 
-6. Compare performance, usability, and scalability between Databricks and Zeppelin more formally using the same analytical workload.
+6. Store transformed analytical outputs in reusable tables so they can be consumed later by dashboards, reports, or downstream data workflows.
