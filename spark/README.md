@@ -12,7 +12,7 @@ Technologies used in this project include PySpark, Databricks, Zeppelin, Postgre
 
 ---
 
-## Databricks and Hadoop Implementation
+## Databricks Hadoop Implementation
 
 The Databricks implementation uses a retail transaction dataset stored in PostgreSQL. The dataset includes invoice number, stock code, item description, quantity, invoice date, unit price, customer ID, and country. I connected Databricks to PostgreSQL using JDBC and loaded the retail table into a PySpark DataFrame.
 
@@ -49,7 +49,7 @@ Main Databricks architecture components:
 
 ---
 
-## Zeppelin and Hadoop Implementation
+## Zeppelin Implementation
 
 The Zeppelin implementation focuses on evaluating PySpark on Zeppelin notebook using the World Development Indicators dataset. The business goal of this part was not retail analytics, but rather to explore how PySpark can be used in Zeppelin for structured analytical tasks in a Hadoop environment.
 
