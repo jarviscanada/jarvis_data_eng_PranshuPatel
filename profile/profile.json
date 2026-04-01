@@ -48,6 +48,11 @@
       "description": "Designed and implemented a Unix-style grep application in Core Java 8 that recursively scans directories, performs regex-based pattern matching, and writes filtered results to an output file using a clean interface-driven architecture and modular workflow design. Leveraged Java Stream and Lambda APIs to adopt functional programming practices aligned with Spark/Scala big data systems, integrated structured logging using SLF4J + Log4j, packaged the application as an executable Uber/Fat JAR via Maven Shade Plugin, explored JVM memory tuning (-Xms, -Xmx) to analyze performance and OutOfMemoryError scenarios, and containerized the application using Docker (OpenJDK Alpine base image) for environment-independent deployment and distribution through Docker Hub.",
       "git_url": "/core_java",
       "name": "Java Grep Application"
+    },
+    {
+      "description": "Implemented a PySpark-based data analytics project across Databricks and Zeppelin to evaluate distributed data processing in notebook environments. In Databricks, loaded retail transaction data from PostgreSQL using JDBC and built end-to-end analytics with PySpark DataFrames, including monthly sales, placed vs. canceled orders, sales growth, active users, new vs. existing users, and RFM-based customer segmentation. In Zeppelin, analyzed World Development Indicators data using PySpark and Hive-backed tables to strengthen Spark transformation, filtering, aggregation, and join skills. Applied structured DataFrame APIs, data wrangling, and business-focused analysis to generate scalable insights across customer behavior and sales trends.",
+      "git_url": "/spark",
+      "name": "PySpark Data Analysis"
     }
   ],
   "name": "Pranshu Patel",
