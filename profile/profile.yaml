@@ -49,6 +49,13 @@ jarvis_projects:
     git_url: "/spark"
     description: Implemented a PySpark-based data analytics project across Databricks and Zeppelin to evaluate distributed data processing in notebook environments. In Databricks, loaded retail transaction data from PostgreSQL using JDBC and built end-to-end analytics with PySpark DataFrames, including monthly sales, placed vs. canceled orders, sales growth, active users, new vs. existing users, and RFM-based customer segmentation. In Zeppelin, analyzed World Development Indicators data using PySpark and Hive-backed tables to strengthen Spark transformation, filtering, aggregation, and join skills. Applied structured DataFrame APIs, data wrangling, and business-focused analysis to generate scalable insights across customer behavior and sales trends.
 
+  - name: "ETL pipeline for Financial Data"
+    git_url: "/spark"
+    description: Built an end-to-end Financial Fraud Analytics ETL pipeline on Azure Databricks using a medallion architecture (Bronze, Silver, Gold) to ingest, clean, enrich, and analyze multi-source financial transaction data. The project integrated Azure SQL Database, Azure Data Lake Storage Gen2, PySpark, JDBC, Databricks dashboards, and Databricks Jobs to process transactions, card data, user data, merchant category codes, and fraud labels into analytics-ready datasets. I designed gold-layer tables to answer key fraud business questions such as fraud trends over time, high-risk users, merchant category fraud rates, daily fraud losses, and behavior changes before and after fraudulent events, and then built an interactive dashboard with filters and job orchestration to automate the full pipeline from raw ingestion to reporting refresh.
+
+  - name: "DLT pipeline for Alpha-Vantage Stock Data"
+    git_url: "/spark"
+    description: Designed and implemented an end-to-end stock market analytics pipeline in Databricks using Delta Live Tables (DLT), PySpark, and Alpha Vantage API, processing daily stock data for AAPL, MSFT, GOOGL, and TSLA through a medallion architecture. Built bronze, silver, and gold layers to ingest raw API feeds, enforce data quality checks and business rules, standardize and deduplicate records, and produce analytical tables for 7, 30, and 90-day price and volume trend analysis. Integrated the gold layer with a Databricks dashboard for business-friendly visualization and automated the entire workflow using Databricks Jobs, including ingestion, pipeline refresh, and dashboard update, strengthening my practical experience in DLT-based ETL design, financial data engineering, and workflow orchestration.
 
 # List of personal or academic projects
 highlighted_projects:
