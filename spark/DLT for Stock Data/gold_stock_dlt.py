@@ -8,17 +8,10 @@ from pyspark.sql.window import Window
 
 @dp.materialized_view(name="gold_stock_history")
 def gold_stock_history():
-    aapl_df = spark.read.table("silver_aapl")
-    msft_df = spark.read.table("silver_msft")
-    googl_df = spark.read.table("silver_googl")
-    tsla_df = spark.read.table("silver_tsla")
+    df = spark.read.table("silver_daily_stock")
 
     return (
-        aapl_df
-        .unionByName(msft_df)
-        .unionByName(googl_df)
-        .unionByName(tsla_df)
-        .select(
+        df.select(
             "symbol",
             "trading_date",
             "open_price",

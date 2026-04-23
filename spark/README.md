@@ -170,7 +170,9 @@ This made the full workflow reproducible and easier to refresh in a structured s
 
 ## Stock Market Analytics Pipeline on Databricks
 
-This project focuses on building an end-to-end stock market analytics pipeline using Alpha Vantage API, PySpark, Databricks DLT, Delta tables, dashboards, and workflow orchestration. The main goal of this implementation was to gain practical experience in API-based ingestion, medallion architecture design, financial time-series transformation, data quality validation, trend analysis, and automated pipeline execution in Databricks.
+## Stock Market Analytics Pipeline on Databricks
+
+This project demonstrates an end-to-end stock market analytics pipeline built on Databricks using the Alpha Vantage API, PySpark, Delta tables, Delta Live Tables / Lakeflow Declarative Pipelines, Databricks dashboards, and workflow orchestration. The goal of this project was to gain hands-on experience with API-based ingestion, incremental data loading, medallion architecture, financial time-series transformation, data quality validation, trend analysis, and pipeline automation in Databricks.
 
 The pipeline was built for four companies:
 
@@ -182,68 +184,65 @@ The pipeline was built for four companies:
 The source data was extracted from the Alpha Vantage API using three endpoints:
 
 - `TIME_SERIES_DAILY` for historical daily stock prices and volume
-- `GLOBAL_QUOTE` for latest ticker snapshot data
+- `GLOBAL_QUOTE` for latest market quote snapshots
 - `OVERVIEW` for company-level metadata
 
-To keep the API key secure, it was stored in Databricks Secrets and accessed inside the ingestion notebook during execution. Because the source is a rate-limited external API, the workflow was divided into two logical parts:
+To keep the API key secure, it was stored in Databricks Secrets and accessed inside the ingestion notebook during runtime. Since Alpha Vantage is a rate-limited external API, the solution was intentionally divided into two stages:
 
-1. a raw ingestion notebook that lands source data into Delta tables
-2. a Databricks DLT pipeline that transforms the data through bronze, silver, and gold layers
+1. a raw ingestion notebook that lands API data into Delta landing tables
+2. a DLT / Lakeflow pipeline that processes the landed data through bronze, silver, and gold layers
 
-This design made the ingestion step more controllable while still using DLT for the medallion transformation pipeline.
+This separation made the workflow easier to control, more reliable, and better aligned with real-world medallion architecture design.
 
-### Raw Ingestion Layer
+### Raw Ingestion / Landing Layer
 
 A separate ingestion notebook was created to call the Alpha Vantage API for all four symbols and land the source data into raw Delta tables in append mode.
 
-Raw tables created in this project:
+Landing tables created in this project:
 
-- `raw_stock.alpha_daily_raw`
-- `raw_stock.alpha_quote_raw`
-- `raw_stock.alpha_company_raw`
+- `bronze_src.daily_stock_incoming`
+- `bronze_src.quotes_incoming`
+- `bronze_src.company_info_incoming`
 
-The raw landing layer preserves source history over time and acts as the upstream input for the DLT pipeline.
+This landing layer acts as the raw source layer for the pipeline and preserves source history over time.
+
+The ingestion notebook follows three different loading patterns:
+
+- **Daily stock history** is loaded incrementally, meaning only new trading dates are appended for each symbol.
+- **Quote snapshots** are appended on every run so that the latest market quote is captured as a time-based snapshot.
+- **Company overview data** is also appended as snapshots on every run to preserve the latest metadata returned by the API.
+
+This design allows the raw layer to act as a durable ingestion checkpoint before downstream transformations begin.
 
 ### Bronze Layer
 
-The bronze layer was implemented in a dedicated DLT transformation file and acts as the first pipeline-managed layer. It reads the raw landing tables and splits the data into separate company-level DLT tables.
+The bronze layer was implemented in a dedicated pipeline file and acts as the first pipeline-managed layer. It reads the landing tables as streaming inputs and makes the raw ingested data available for downstream transformation.
 
 Bronze tables created in this project:
 
-#### Daily stock history
-- `bronze_aapl_daily`
-- `bronze_msft_daily`
-- `bronze_googl_daily`
-- `bronze_tsla_daily`
+- `bronze_daily_stock`
+- `bronze_quotes`
+- `bronze_company_info`
 
-#### Latest quote tables
-- `bronze_aapl_quote`
-- `bronze_msft_quote`
-- `bronze_googl_quote`
-- `bronze_tsla_quote`
-
-#### Company overview tables
-- `bronze_aapl_company`
-- `bronze_msft_company`
-- `bronze_googl_company`
-- `bronze_tsla_company`
-
-This layer preserves the raw structure while organizing the API data into separate company-specific datasets required by the project.
+This layer keeps the raw landed structure intact while enabling incremental processing inside the pipeline. Since the landing tables are append-only, the bronze layer picks up only newly ingested records instead of re-ingesting the entire dataset from the API.
 
 ### Silver Layer
 
-The silver layer was implemented in a separate DLT transformation file and focuses on cleaning, standardizing, validating, and deduplicating the daily stock data for each company.
+The silver layer was implemented in a separate transformation file and focuses on standardizing, validating, and cleaning the bronze data before it is used for analytics.
 
 Silver tables created in this project:
 
-- `silver_aapl`
-- `silver_msft`
-- `silver_googl`
-- `silver_tsla`
+- `silver_daily_stock`
+- `silver_quotes`
+- `silver_company_info`
 
-Key transformations included:
+The silver layer is designed as an incremental append history layer. As new records arrive in bronze, silver processes only those new records and appends the transformed output to the existing clean dataset.
 
-- explicit type casting for all important fields
+#### `silver_daily_stock`
+
+This table contains cleaned and validated historical daily stock data. Key transformations include:
+
+- explicit type casting for analytical fields
 - null validation on required columns
 - business rule validation such as:
   - `high_price >= low_price`
@@ -252,14 +251,22 @@ Key transformations included:
   - `close_price >= low_price`
   - `close_price <= high_price`
   - `volume >= 0`
-- deduplication using `symbol` and `trading_date`, keeping the latest record based on `api_pull_ts`
-- final selection of consistent analytical columns for downstream reporting
 
-The silver layer used DLT expectations and transformation logic to ensure that only valid and reliable stock records were propagated forward.
+This creates a reliable historical stock dataset that can be directly used for downstream analysis.
+
+#### `silver_quotes`
+
+This table stores cleaned quote snapshots captured from the `GLOBAL_QUOTE` endpoint. Each pipeline run appends a fresh quote snapshot for each stock symbol, allowing the project to retain historical quote-level observations over time.
+
+#### `silver_company_info`
+
+This table stores cleaned company overview snapshots from the `OVERVIEW` endpoint. It keeps a historical record of company metadata returned by the API across pipeline runs.
+
+Overall, the silver layer acts as the trusted business-ready layer of the project, where raw API output is converted into structured and validated datasets.
 
 ### Gold Layer
 
-The gold layer was implemented in a separate DLT transformation file and was designed for analytical reporting and dashboard consumption.
+The gold layer was implemented in a separate transformation file and was designed for analytical reporting and dashboard consumption.
 
 Gold tables created in this project:
 
@@ -269,74 +276,84 @@ Gold tables created in this project:
 
 #### `gold_stock_history`
 
-This table combines the cleaned silver data of all four companies into one curated stock history dataset. It acts as the common business-ready analytical base for downstream calculations and dashboarding.
+This table serves as the curated historical stock dataset built from `silver_daily_stock`. It contains the cleaned daily stock records for all four companies and acts as the analytical base for downstream reporting and trend calculations.
 
 #### `gold_price_trend`
 
-This table performs price trend analysis for each company using window functions partitioned by `symbol` and ordered by `trading_date`. It includes:
+This table performs stock price trend analysis using window functions partitioned by `symbol` and ordered by `trading_date`. It includes:
 
-- close price from 7 trading days ago
-- close price from 30 trading days ago
-- close price from 90 trading days ago
-- 7-day absolute price change
-- 30-day absolute price change
-- 90-day absolute price change
-- 7-day percentage price change
-- 30-day percentage price change
-- 90-day percentage price change
+- close price from 7 prior trading rows
+- close price from 30 prior trading rows
+- close price from 90 prior trading rows
+- 7-row absolute price change
+- 30-row absolute price change
+- 90-row absolute price change
+- 7-row percentage price change
+- 30-row percentage price change
+- 90-row percentage price change
+
+These lag-based calculations help analyze short-term, medium-term, and longer-term price movement patterns for each company.
 
 #### `gold_volume_trend`
 
-This table performs volume trend analysis for each company using the same company-partitioned window logic. It includes:
+This table performs trading volume trend analysis using the same symbol-based window logic. It includes:
 
-- volume from 7 trading days ago
-- volume from 30 trading days ago
-- volume from 90 trading days ago
-- 7-day absolute volume change
-- 30-day absolute volume change
-- 90-day absolute volume change
+- volume from 7 prior trading rows
+- volume from 30 prior trading rows
+- volume from 90 prior trading rows
+- 7-row absolute volume change
+- 30-row absolute volume change
+- 90-row absolute volume change
 
-These gold outputs were designed to answer questions such as:
+These outputs help track how market activity changes over time for each stock.
 
-- how the stock price of each company has changed over 7, 30, and 90 trading days
-- which companies show stronger short-term or medium-term price momentum
-- how trading volume has shifted over time for each company
-- how multiple companies compare side by side in terms of price and volume trends
+### Pipeline Structure
 
-### DLT Pipeline Structure
+To keep the implementation modular and easier to maintain, the pipeline was separated into three transformation files:
 
-To make the pipeline cleaner and easier to maintain, the Databricks DLT implementation was separated into different transformation files:
+- `bronze_stock_dlt.py`
+- `silver_stock_dlt.py`
+- `gold_stock_dlt.py`
 
-- `bronze_stock_dlt`
-- `silver_stock_dlt`
-- `gold_stock_dlt`
+This structure makes the medallion layers easier to understand, debug, and present, while still allowing them to run as part of the same Databricks pipeline.
 
-This structure made the medallion layers easier to understand, maintain, and present, while still running as part of the same DLT pipeline.
+### Data Flow Summary
 
-### Dashboard and Job Orchestration
+The project follows this overall flow:
+
+- Alpha Vantage API
+- Raw ingestion notebook
+- Delta landing tables in `bronze_src`
+- Bronze streaming pipeline tables
+- Silver cleaned incremental history tables
+- Gold analytical tables
+- Databricks dashboard
+
+This design separates ingestion from transformation, improves reliability, and makes it easier to re-run or troubleshoot each stage independently.
+
+### Dashboard and Workflow Orchestration
 
 A Databricks dashboard was built using the gold tables as the reporting layer. The dashboard includes visuals such as:
 
 - close price trend over time
 - trading volume trend over time
-- 7-day, 30-day, and 90-day price change comparison
-- 7-day, 30-day, and 90-day percentage price change comparison
-- 7-day, 30-day, and 90-day volume change comparison
+- 7-row, 30-row, and 90-row price change comparison
+- 7-row, 30-row, and 90-row percentage price change comparison
+- 7-row, 30-row, and 90-row volume change comparison
 
-This made it possible to analyze both single-company trends and cross-company comparisons from the curated gold outputs.
+This made it possible to analyze both company-level trends and cross-company comparisons from the curated gold outputs.
 
-To operationalize the workflow, a Databricks job was created with task dependencies in the following order:
+To operationalize the project, a Databricks workflow was created with task dependencies in the following order:
 
 - Raw Ingestion Notebook
-- DLT Pipeline Update
+- DLT / Lakeflow Pipeline Update
 - Dashboard Refresh
 
-This orchestration design allowed the full workflow to run in a controlled sequence on a daily schedule. The raw ingestion notebook appended source data into Delta landing tables, the DLT pipeline refreshed bronze, silver, and gold transformations, and the dashboard task refreshed the final visual layer.
+This orchestration allows the project to run in a controlled sequence on a schedule. First, the ingestion notebook lands new API data into Delta landing tables. Then the pipeline processes the landed data through bronze, silver, and gold layers. Finally, the dashboard refreshes to reflect the latest analytical output.
 
 ### Stock Market Pipeline Architecture Diagram
 
 ![DLT Architecture](./Assests/DLT.png)
-
 
 ---
 
