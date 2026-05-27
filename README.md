@@ -8,7 +8,7 @@ Pranshu Patel is a Data Engineer with hands-on experience designing, building, a
 
 **Competent:** Power BI, Pandas, PySpark, RDBMS, Agile/Scrum
 
-**Familiar:** Tableau, SAS, Docker, Cloud Computing, Excel Automation
+**Familiar:** Tableau, SAS, Docker, Cloud Computing, Excel Automation, Mainframe, COBOL, JCL, DB2, ISPF
 
 ## Jarvis Projects
 
@@ -28,6 +28,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PranshuPat
 **ETL pipeline for Financial Data** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/spark)]: Built an end-to-end Financial Fraud Analytics ETL pipeline on Azure Databricks using a medallion architecture (Bronze, Silver, Gold) to ingest, clean, enrich, and analyze multi-source financial transaction data. The project integrated Azure SQL Database, Azure Data Lake Storage Gen2, PySpark, JDBC, Databricks dashboards, and Databricks Jobs to process transactions, card data, user data, merchant category codes, and fraud labels into analytics-ready datasets. I designed gold-layer tables to answer key fraud business questions such as fraud trends over time, high-risk users, merchant category fraud rates, daily fraud losses, and behavior changes before and after fraudulent events, and then built an interactive dashboard with filters and job orchestration to automate the full pipeline from raw ingestion to reporting refresh.
 
 **DLT pipeline for Alpha-Vantage Stock Data** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/spark)]: Designed and implemented an end-to-end stock market analytics pipeline in Databricks using Delta Live Tables (DLT), PySpark, and Alpha Vantage API, processing daily stock data for AAPL, MSFT, GOOGL, and TSLA through a medallion architecture. Built bronze, silver, and gold layers to ingest raw API feeds, enforce data quality checks and business rules, standardize and deduplicate records, and produce analytical tables for 7, 30, and 90-day price and volume trend analysis. Integrated the gold layer with a Databricks dashboard for business-friendly visualization and automated the entire workflow using Databricks Jobs, including ingestion, pipeline refresh, and dashboard update, strengthening my practical experience in DLT-based ETL design, financial data engineering, and workflow orchestration.
+
+**COBOL Student Registration System** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/Mainframe)]: Built a COBOL-based Student Registration System using OpenCobolIDE/GnuCOBOL to simulate mainframe-style VSAM processing with indexed files. The application provides a menu-driven interface to generate the student file, insert, update, delete, and query student records by ID or inclusion date. It also generates a course-wise report using sorting and file handling logic. This project strengthened my understanding of COBOL fundamentals, copybooks, indexed file processing, record layouts, CRUD operations, and report generation in a mainframe-style business application.
 
 
 ## Highlighted Projects
@@ -57,5 +59,6 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PranshuPat
 - Career Essentials in Data Analysis  Microsoft & LinkedIn
 - Foundations & Career Skills in Data Analytics  LinkedIn
 - Database Management Systems & Data Science with Python  Scaler
+- COBOL Essential Training - LinkedIn
 - Continuous learning in data engineering and analytics
 - Technical documentation and project reporting
