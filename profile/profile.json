@@ -63,6 +63,11 @@
       "description": "Designed and implemented an end-to-end stock market analytics pipeline in Databricks using Delta Live Tables (DLT), PySpark, and Alpha Vantage API, processing daily stock data for AAPL, MSFT, GOOGL, and TSLA through a medallion architecture. Built bronze, silver, and gold layers to ingest raw API feeds, enforce data quality checks and business rules, standardize and deduplicate records, and produce analytical tables for 7, 30, and 90-day price and volume trend analysis. Integrated the gold layer with a Databricks dashboard for business-friendly visualization and automated the entire workflow using Databricks Jobs, including ingestion, pipeline refresh, and dashboard update, strengthening my practical experience in DLT-based ETL design, financial data engineering, and workflow orchestration.",
       "git_url": "/spark",
       "name": "DLT pipeline for Alpha-Vantage Stock Data"
+    },
+    {
+      "description": "Built a COBOL-based Student Registration System using OpenCobolIDE/GnuCOBOL to simulate mainframe-style VSAM processing with indexed files. The application provides a menu-driven interface to generate the student file, insert, update, delete, and query student records by ID or inclusion date. It also generates a course-wise report using sorting and file handling logic. This project strengthened my understanding of COBOL fundamentals, copybooks, indexed file processing, record layouts, CRUD operations, and report generation in a mainframe-style business application.",
+      "git_url": "/Mainframe",
+      "name": "COBOL Student Registration System"
     }
   ],
   "name": "Pranshu Patel",
@@ -71,7 +76,8 @@
       "bullets": [
         "Career Essentials in Data Analysis  Microsoft \u0026 LinkedIn",
         "Foundations \u0026 Career Skills in Data Analytics  LinkedIn",
-        "Database Management Systems \u0026 Data Science with Python  Scaler"
+        "Database Management Systems \u0026 Data Science with Python  Scaler",
+        "COBOL Essential Training - LinkedIn"
       ],
       "title": "Certificates"
     },
@@ -122,7 +128,12 @@
       "SAS",
       "Docker",
       "Cloud Computing",
-      "Excel Automation"
+      "Excel Automation",
+      "Mainframe",
+      "COBOL",
+      "JCL",
+      "DB2",
+      "ISPF"
     ],
     "proficient": [
       "Python",
