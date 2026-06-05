@@ -1,19 +1,21 @@
 # Pranshu Patel . Jarvis Consulting
 
-Pranshu Patel is a Data Engineer with hands-on experience designing, building, and maintaining data pipelines and analytics solutions across consulting, academic, and industry projects. He has worked extensively with Python, SQL, Linux, and BI tools to clean, transform, and analyze large-scale datasets while delivering actionable insights to stakeholders. Pranshu is passionate about automating data workflows, improving data quality, and enabling data-driven decision-making through reliable analytics and visualization. He is seeking a Data Engineer role where he can contribute to scalable data systems, collaborate with cross-functional teams, and continue growing in cloud-based data engineering environments.
+Aspiring Mainframe Developer with a strong foundation in data engineering, SQL, Linux, and enterprise application development. Experienced in working with Python, SQL, Git, relational databases, and data processing workflows, with growing hands-on knowledge of COBOL, JCL, DB2, ISPF, z/OS commands, and batch-processing concepts. Developed mainframe-style COBOL applications involving file handling, indexed files, copybooks, record layouts, CRUD operations, sorting, reporting, and structured business logic. Strong understanding of data quality, automation, backend processing, and relational database systems, with a keen interest in contributing to COBOL, DB2, JCL, and enterprise batch application development in large-scale banking and business environments.
 
 ## Skills
 
-**Proficient:** Python, SQL, Linux/Bash, Git, Data Analysis
+**Proficient:** SQL, Linux/Bash, Git, Relational Databases, Data Analysis
 
-**Competent:** Power BI, Pandas, PySpark, RDBMS, Agile/Scrum
+**Competent:** COBOL, DB2, JCL, ISPF, z/OS Commands, Batch Processing, File Handling, Python
 
-**Familiar:** Tableau, SAS, Docker, Cloud Computing, Excel Automation, Mainframe, COBOL, JCL, DB2, ISPF
+**Familiar:** Mainframe, Copybooks, Record Layouts, Indexed Files, RDBMS, Agile/Scrum, Docker, Power BI, Pandas, PySpark, Cloud Computing, Tableau, SAS, Excel Automation
 
 ## Jarvis Projects
 
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel)
 
+
+**COBOL Student Registration System** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/Mainframe)]: Developed a mainframe-style Student Registration System using COBOL in OpenCobolIDE/GnuCOBOL to simulate enterprise batch and transaction-processing logic. Built a menu-driven application to generate student files, insert records, update records, delete records, query students by ID or inclusion date, and produce course-wise reports. Applied structured COBOL programming concepts including divisions, paragraphs, working-storage variables, copybooks, record layouts, file handling, indexed file processing, sorting, CRUD operations, and report generation. This project strengthened my understanding of COBOL business logic, batch-style processing, file organization, and core concepts used in mainframe application development.
 
 **Linux Cluster Resource Monitoring App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/linux_sql)]: Developed a Linux cluster monitoring application using CentOS, Bash, Docker, PostgreSQL, and crontab to collect, store, and analyze system resource metrics, enabling automated data analytics, system health tracking, and performance reporting across multiple nodes.
 
@@ -29,8 +31,6 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PranshuPat
 
 **DLT pipeline for Alpha-Vantage Stock Data** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/spark)]: Designed and implemented an end-to-end stock market analytics pipeline in Databricks using Delta Live Tables (DLT), PySpark, and Alpha Vantage API, processing daily stock data for AAPL, MSFT, GOOGL, and TSLA through a medallion architecture. Built bronze, silver, and gold layers to ingest raw API feeds, enforce data quality checks and business rules, standardize and deduplicate records, and produce analytical tables for 7, 30, and 90-day price and volume trend analysis. Integrated the gold layer with a Databricks dashboard for business-friendly visualization and automated the entire workflow using Databricks Jobs, including ingestion, pipeline refresh, and dashboard update, strengthening my practical experience in DLT-based ETL design, financial data engineering, and workflow orchestration.
 
-**COBOL Student Registration System** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PranshuPatel/tree/master/Mainframe)]: Built a COBOL-based Student Registration System using OpenCobolIDE/GnuCOBOL to simulate mainframe-style VSAM processing with indexed files. The application provides a menu-driven interface to generate the student file, insert, update, delete, and query student records by ID or inclusion date. It also generates a course-wise report using sorting and file handling logic. This project strengthened my understanding of COBOL fundamentals, copybooks, indexed file processing, record layouts, CRUD operations, and report generation in a mainframe-style business application.
-
 
 ## Highlighted Projects
 **E-Commerce Sales Data Pipeline** [[GitHub](https://github.com/iampranshupatel/E-Commerce-Store-Analysis)]: Engineered an end-to-end ETL pipeline using Python, SQL, and Pandas to process over 100k e-commerce transactions, performing data cleansing and transformation to support Power BI dashboards and improve analytics-driven business insights.
@@ -40,7 +40,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PranshuPat
 
 ## Professional Experiences
 
-**Data Engineer, Jarvis Consulting Group (January 2026-present)**: Developed and maintained data engineering solutions using Python, SQL, Linux, Docker, and Git while collaborating in Agile teams to build analytics pipelines, automate reporting workflows, and deliver scalable, client-facing data solutions.
+**Data Engineer / Mainframe Developer Trainee, Jarvis Consulting Group (January 2026-present)**: Worked on enterprise application development and data engineering projects using COBOL, SQL, Linux, Java, Python, Docker, Git, and relational databases. Developed mainframe-style COBOL applications involving file handling, indexed files, record layouts, copybooks, menu-driven workflows, CRUD operations, sorting, and reporting. Strengthened understanding of DB2/SQL, JCL, ISPF, z/OS commands, batch processing, debugging, technical documentation, and Agile collaboration while preparing for client-facing Mainframe Developer responsibilities.
 
 **Data Engineer, Futuretech Bizsoft LLP (May 2023-July 2025)**: Processed and analyzed large-scale business and survey datasets using Python, SQL, and SAS, developed Power BI dashboards for KPI tracking, and automated reporting workflows to improve data quality, efficiency, and decision-making across client teams.
 
@@ -56,9 +56,10 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PranshuPat
 
 
 ## Miscellaneous
+- COBOL Essential Training - LinkedIn
+- IBM Badge: Introduction to z/OS Commands and Panels on IBM Z
 - Career Essentials in Data Analysis  Microsoft & LinkedIn
 - Foundations & Career Skills in Data Analytics  LinkedIn
 - Database Management Systems & Data Science with Python  Scaler
-- COBOL Essential Training - LinkedIn
 - Continuous learning in data engineering and analytics
 - Technical documentation and project reporting
