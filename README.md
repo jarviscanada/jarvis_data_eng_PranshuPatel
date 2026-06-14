@@ -42,8 +42,6 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PranshuPat
 
 **Data Engineer / Mainframe Developer Trainee, Jarvis Consulting Group (January 2026-present)**: Worked on enterprise application development and data engineering projects using COBOL, SQL, Linux, Java, Python, Docker, Git, and relational databases. Developed mainframe-style COBOL applications involving file handling, indexed files, record layouts, copybooks, menu-driven workflows, CRUD operations, sorting, and reporting. Strengthened understanding of DB2/SQL, JCL, ISPF, z/OS commands, batch processing, debugging, technical documentation, and Agile collaboration while preparing for client-facing Mainframe Developer responsibilities.
 
-**Data Engineer, Futuretech Bizsoft LLP (May 2023-July 2025)**: Processed and analyzed large-scale business and survey datasets using Python, SQL, and SAS, developed Power BI dashboards for KPI tracking, and automated reporting workflows to improve data quality, efficiency, and decision-making across client teams.
-
 **Data Engineer Intern, Techomax Solutions (February 2023-April 2023)**: Validated and cleaned transactional datasets using Python, SQL, and SAS, performed exploratory data analysis, and built BI dashboards to enhance data reliability and analytical reporting for client-facing deliverables.
 
 **Data Engineer Intern, Webburner India (June 2022-July 2022)**: Collected, cleansed, and structured CRM and survey data using Python, SQL, and Excel while automating ETL workflows and developing dashboards to support marketing analytics and performance tracking.

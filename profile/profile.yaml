@@ -90,11 +90,6 @@ professional_experience:
     duration: "January 2026-present"
     description: Worked on enterprise application development and data engineering projects using COBOL, SQL, Linux, Java, Python, Docker, Git, and relational databases. Developed mainframe-style COBOL applications involving file handling, indexed files, record layouts, copybooks, menu-driven workflows, CRUD operations, sorting, and reporting. Strengthened understanding of DB2/SQL, JCL, ISPF, z/OS commands, batch processing, debugging, technical documentation, and Agile collaboration while preparing for client-facing Mainframe Developer responsibilities.
 
-  - title: "Data Engineer"
-    company: "Futuretech Bizsoft LLP"
-    duration: "May 2023-July 2025"
-    description: Processed and analyzed large-scale business and survey datasets using Python, SQL, and SAS, developed Power BI dashboards for KPI tracking, and automated reporting workflows to improve data quality, efficiency, and decision-making across client teams.
-
   - title: "Data Engineer Intern"
     company: "Techomax Solutions"
     duration: "February 2023-April 2023"
